@@ -1,4 +1,5 @@
-import { Map } from './Map';
+import { Map } from './components/Map';
+import { QR } from './components/QR';
 
 // value
 // url : 이동할 사이트 주소
@@ -8,6 +9,7 @@ function App() {
   return (
     <>
       <Map />
+      <QR />
     </>
   );
 }
