@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/QR-practice/static/js/main.c3db9a4a.js",
+    "main.js": "/QR-practice/static/js/main.7535bc13.js",
     "index.html": "/QR-practice/index.html",
-    "main.c3db9a4a.js.map": "/QR-practice/static/js/main.c3db9a4a.js.map"
+    "main.7535bc13.js.map": "/QR-practice/static/js/main.7535bc13.js.map"
   },
   "entrypoints": [
-    "static/js/main.c3db9a4a.js"
+    "static/js/main.7535bc13.js"
   ]
 }
