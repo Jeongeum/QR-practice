@@ -63,7 +63,13 @@ export const Map = () => {
             <button onClick={closeModal}>X</button>
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
-              <video autoPlay ref={videoRef} />
+              <input
+                type="file"
+                accept="image/*"
+                capture="camera"
+                style={{ display: 'none' }}
+              />
+              {/* <video autoPlay ref={videoRef} /> */}
             </div>
           </Modal>
         </ModalBg>
