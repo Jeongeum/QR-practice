@@ -11,7 +11,7 @@ import { Modal } from './Modal/Modal';
 export const Map = () => {
   const navermaps = useNavermaps();
   const [isOpen, setIsOpen] = useState(false);
-  const videoRef = useRef(null);
+  const cameraRef = useRef(null);
 
   const openModal = () => {
     setIsOpen(true);
@@ -22,19 +22,7 @@ export const Map = () => {
   };
 
   const getUserCamera = () => {
-    navigator.mediaDevices
-      .getUserMedia({
-        video: { facingMode: 'environment' },
-      })
-      .then((stream) => {
-        let video = videoRef.current;
-
-        video.srcObject = stream;
-        video.play();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    cameraRef.current.click();
   };
 
   useEffect(() => {
@@ -64,12 +52,13 @@ export const Map = () => {
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
               <input
+                id="camera"
+                ref={cameraRef}
                 type="file"
                 accept="image/*"
                 capture="camera"
                 style={{ display: 'none' }}
               />
-              {/* <video autoPlay ref={videoRef} /> */}
             </div>
           </Modal>
         </ModalBg>
