@@ -1,4 +1,4 @@
-import { React, useEffect, useRef, useState } from 'react';
+import { React, useState } from 'react';
 import {
   Container as MapDiv,
   Marker,
@@ -7,11 +7,11 @@ import {
 } from 'react-naver-maps';
 import { ModalBg } from './Modal/ModalBg';
 import { Modal } from './Modal/Modal';
+import { QrScanner } from '@yudiel/react-qr-scanner';
 
 export const Map = () => {
   const navermaps = useNavermaps();
   const [isOpen, setIsOpen] = useState(false);
-  const cameraRef = useRef(null);
 
   const openModal = () => {
     setIsOpen(true);
@@ -20,16 +20,6 @@ export const Map = () => {
   const closeModal = () => {
     setIsOpen(false);
   };
-
-  const getUserCamera = () => {
-    cameraRef.current.click();
-  };
-
-  useEffect(() => {
-    if (isOpen) {
-      getUserCamera();
-    }
-  }, [isOpen]);
 
   const mapCenter = new navermaps.LatLng(37.5173, 127.0474);
 
@@ -51,14 +41,7 @@ export const Map = () => {
             <button onClick={closeModal}>X</button>
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
-              <input
-                id="camera"
-                ref={cameraRef}
-                type="file"
-                accept="image/*"
-                capture="camera"
-                style={{ display: 'none' }}
-              />
+              <QrScanner containerStyle={{ borderRadius: '10px' }} />
             </div>
           </Modal>
         </ModalBg>
