@@ -7,7 +7,8 @@ import {
 } from 'react-naver-maps';
 import { ModalBg } from './Modal/ModalBg';
 import { Modal } from './Modal/Modal';
-import { QrScanner } from '@yudiel/react-qr-scanner';
+// import { QrScanner } from '@yudiel/react-qr-scanner';
+import { QRScanner } from './QRScanner';
 
 export const Map = () => {
   const navermaps = useNavermaps();
@@ -41,7 +42,11 @@ export const Map = () => {
             <button onClick={closeModal}>X</button>
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
-              <QrScanner containerStyle={{ borderRadius: '10px' }} />
+              {/* <QrScanner
+                containerStyle={{ borderRadius: '10px' }}
+                onError={(error) => console.log(error?.message)}
+              /> */}
+              <QRScanner />
             </div>
           </Modal>
         </ModalBg>

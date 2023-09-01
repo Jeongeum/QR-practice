@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom';
 import { Map } from './components/Map';
 import { QR } from './components/QR';
 
@@ -6,11 +7,12 @@ import { QR } from './components/QR';
 // 문자 : 해당 문자 검색
 function App() {
   // return <Map />;
+
   return (
-    <>
+    <BrowserRouter>
       <Map />
       <QR />
-    </>
+    </BrowserRouter>
   );
 }
 export default App;
