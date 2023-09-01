@@ -42,7 +42,7 @@ export const Map = () => {
             <button onClick={closeModal}>X</button>
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
-              <QRScanner />
+              <QRScanner setIsOpen={setIsOpen} />
             </div>
           </Modal>
         </ModalBg>

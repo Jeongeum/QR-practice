@@ -5,9 +5,9 @@ import { QRCodeCanvas } from 'qrcode.react';
 export const QR = () => {
   const navigate = useNavigate();
   return (
-    <QRCodeCanvas
-      value="https://www.naver.com/"
-      onClick={() => navigate('https://www.naver.com/')}
-    />
+    <>
+      <p>테스트용 qr코드</p>
+      <QRCodeCanvas value="https://www.naver.com/" />
+    </>
   );
 };

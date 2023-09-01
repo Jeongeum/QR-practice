@@ -3,7 +3,7 @@ import { Html5Qrcode, Html5QrcodeScanner } from 'html5-qrcode';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const QRScanner = () => {
+export const QRScanner = ({ setIsOpen }) => {
   const [scanResult, setScanResult] = useState(null);
   const qrcodeRef = useRef();
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ export const QRScanner = () => {
       console.log('QR 코드 스캔 결과:', decodedText);
       setScanResult(() => decodedText);
       qrcodeRef.current.click();
+      setIsOpen(false);
       scanner.clear();
     };
 
