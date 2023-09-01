@@ -42,10 +42,6 @@ export const Map = () => {
             <button onClick={closeModal}>X</button>
             <div className="qrwrapper">
               <h3>QR 코드를 스캔해주세요.</h3>
-              {/* <QrScanner
-                containerStyle={{ borderRadius: '10px' }}
-                onError={(error) => console.log(error?.message)}
-              /> */}
               <QRScanner />
             </div>
           </Modal>
