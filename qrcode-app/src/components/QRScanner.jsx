@@ -1,16 +1,14 @@
-import React, { useEffect, useRef } from 'react';
-import { Html5Qrcode, Html5QrcodeScanner } from 'html5-qrcode';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useRef } from "react";
+import { Html5QrcodeScanner } from "html5-qrcode";
+import { useState } from "react";
 
 export const QRScanner = ({ setIsOpen }) => {
   const [scanResult, setScanResult] = useState(null);
   const qrcodeRef = useRef();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner(
-      'reader',
+      "reader",
       {
         fps: 10,
         qrbox: { width: 250, height: 250 },
@@ -19,7 +17,7 @@ export const QRScanner = ({ setIsOpen }) => {
     );
 
     const handleScanSuccess = (decodedText) => {
-      console.log('QR 코드 스캔 결과:', decodedText);
+      console.log("QR 코드 스캔 결과:", decodedText);
       setScanResult(() => decodedText);
       qrcodeRef.current.click();
       setIsOpen(false);
@@ -46,7 +44,7 @@ export const QRScanner = ({ setIsOpen }) => {
           </a>
         </>
       ) : (
-        <div id="reader" style={{ width: '250px', height: '250px' }}></div>
+        <div id="reader" style={{ width: "250px", height: "250px" }}></div>
       )}
     </>
   );
